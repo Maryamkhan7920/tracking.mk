@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.logo{
+			width: 20%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.logo img{
+			width: 50%;
+			border: 3px solid white;
+			border-radius: 50px;
+
+		}
+		.navbar{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: sticky;
+			top: 0;
+			cursor: pointer;
+			z-index: 2;
+		}
+		.nav-list{
+            width: 50%;
+            /*background-color: black;*/
+            display: flex;
+            align-items: center;
+		}
+		.nav-list li{
+			list-style: none;
+			padding: 26px 30px; 
+
+		}
+		.nav-list li a{
+			text-decoration: none;
+			color: white;
+
+		}
+		.nav-list li a:hover{
+			color: #00DED1;
+
+		}
+		.rightNav{
+			
+			width: 50%;
+			text-align: right;
+			padding: 0 23px;
+
+		}
+		.btn-sm{
+			padding: 8px 20px;
+			
+			background: none;
+			color: white;
+			cursor: pointer;
+			border: none;
+			font-family: sans-serif;
+		}
+		.background{
+			background: rgba(0, 0, 0, 0.7) url('https://images.pexels.com/photos/3314325/pexels-photo-3314325.jpeg?auto=compress&cs=tinysrgb&w=600');
+			background-size: cover;
+			background-blend-mode: darken;
+		}
+		.firstSection{
+			height: 60vh;
+		}
+		.box-main{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			font-family: sans-serif;
+			/*height: 80%;*/
+		}
+		.firstHalf{
+
+			text-align: center;
+			margin-top: 120px;
+		}
+		.text-big{
+			font-size: 40px;
+			
+			
+		}
+		.text-small{
+			font-size: 45px;
+			font-family: monospace;
+		}
+		.search{
+			border-radius: 20px;
+			padding: 8px 20px;
+			width: 270px;
+			margin-top: 18px;
+			outline: none;
+			font-size: 15px;
+		}
+		.button{
+			padding: 8px 20px;
+			margin: 7px 0;
+			border: 2px solid white;
+			border-radius: 8px;
+			background: none;
+			color: white;
+			cursor: pointer;
+
+		}
+		.map{
+			margin-top: 50px;
+			margin-bottom: 40px;
+			font-size: 70px;
+
+		}
+		.gmap{
+			font-size: 25px;
+			margin-top: 0;
+			margin-bottom: 10px;
+			margin-left: 5px;
+		}
+		.mctext{
+			margin-top: 50px;
+			margin-bottom: 40px;
+			font-size: 70px;
+			margin-left: 10px;
+
+		}
+		.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: black;
+  font-size: 45px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+/* footer */
+		
+		.footer{
+			height: 287px;
+			width: 100%;
+			margin-top: 30px;
+			
+			bottom: 0;
+			left: 0;
+			background: #111;
+
+		}
+		.footer .content{
+			max-width: 1350px;
+		
+			margin: auto;
+			padding: 20px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+		}
+		.footer .content p,a{
+			color: #fff;
+		}
+		.footer .content .box{
+			width: 33%;
+		}
+		.footer .content .topic{
+			font-size: 22px;
+			font-weight: 600;
+			color: #fff;
+			margin-bottom: 16px;
+		}
+		.footer .content p{
+			text-align: justify;
+		}
+		.footer .content .lower .topic{
+			margin: 7px 0 5px 0;
+		}
+		.footer .content .lower i{
+			padding-right: 16px;
+		}
+		.footer .content .middle a{
+			line-height: 32px;
+			text-decoration: none;
+		}
+		.footer .content .right input[type="text"]{
+			height: 40px;
+			width: 95%;
+			outline: none; 
+			color: #d9d9d9;
+			background: #000;
+			border-radius: 5px;
+			padding-left: 10px;
+			font-size: 17px;
+			border: 2px solid #222222;
+		}
+		.footer .content .right input[type="submit"]{
+			height: 38px;
+			width: 98%;
+			font-size: 18px;
+			background: black;
+			outline: none;
+			border-radius: 5px;
+			color: #fff;
+			letter-spacing: 1px;
+			cursor: pointer;
+			margin-top: 5px;
+			border: 2px solid #00DED1;
+			transform: all 0.3s ease-in-out;
+
+		}
+		.content .right input[type="submit"]:hover{
+			background: #00DED1 ;
+			
+		}
+		.footer .content .media-icons a{
+			font-size: 16px;
+			height: 45px;
+			width: 45px;
+			
+			display: inline-block;
+			text-align: center;
+			line-height: 43px;
+			border: 2px solid #222222;
+			margin: 25px 5px 0 0;
+			border-radius: 5px;
+			transition: all 0.3s ease;
+
+		}
+		.content .media-icons a:hover{
+			border-color: #00DED1;
+
+		}
+		.footer .bottom{
+			width: 100;
+			text-align: right;
+			color: #d9d9d9;
+			margin-right: 95px;
+		
+			
+		}
+		.footer .bottom a{
+			color: #00DED1;
+		}
+		.footer a{
+			transition: all 0.3s ease;
+		}
+		.footer a:hover{
+			color: #00DED1;
+		}
+
+		
+		
+	</style>
+</head>
+<body>
+	<nav class="navbar background">
+		<ul class="nav-list">
+			<div class="logo"><img src="https://dcassetcdn.com/design_img/320429/48855/48855_2748031_320429_thumbnail.jpg" alt="logo">
+				</div>
+				<li><a href="#home">Home</a></li>
+			<li><a href="#about">About</a></li>
+			<li><a href="#blog">Blog</a></li>
+			<li><a href="#contact">Contact</a></li>
+			</ul>
+			<div class="rightNav">
+				<button class="btn btn-sm">login</button>
+				<button class="btn btn-sm">Signup</button>
+			</div>
+		</nav>
+		<section class="background firstSection">
+			<div class="box-main">
+				<div class="firstHalf">
+					<p class="text-big">STAY AT EASE</p>
+					<p class="text-small"><marquee width="100%" scrollamount="15">Explore the Pakistan's best dormitory here where you look for comfort</marquee></p>
+					<input type="text" name="city name"  placeholder="city name" class="search">
+					<button class="button">Search</button>
+
+				</div>
+			</div>
+			
+		</section>
+		<section>
+			<center><h1 class="map">Explore your Accomodation</h1></center>
+			<p class="gmap">When it comes to find the perfect accomodation, it's all about location.To help fine tune your decision, you should use Google Maps.It's vital that you plan your travel route from home ,and the Google Maps can help you with this.Google recommends the best route,and also it is linked with public transport networks. 
+				Go to the area you wish to stay and search for Hostels and hotels. 
+			This displays all hostels and hotels in the area, represented on the map. So stay with Stay at Ease,find your place in no time and bring joy to your life.
+		</p>	
+			<hr>
+			<center><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d26404.12608802587!2d72.38941637656391!3d34.184296305977604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1662183425120!5m2!1sen!2s" width="1090" height="500" style="border:2px solid grey; margin-top: 10px; margin-bottom: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></center>
+			<hr>
+
+		</section>
+		<section class="mck">
+			
+			<h1 class="mctext">Major cities of Pakistan</h1>
+			<div class="slideshow-container">
+				<div class="mySlides fade">
+					<div class="numbertext">1 / 4</div>
+					<img src="https://t3.ftcdn.net/jpg/03/20/99/64/360_F_320996482_z84U9tsKWEgk8AiCXf6nNmzPG1U1ZkKO.jpg" 
+				    width=100% height=350px>
+					 <div class="text">Islamabad,Pakistan</div>
+					</div>
+					<div class="mySlides fade">
+                    <div class="numbertext">2 / 4</div>
+                    <img src="https://lh3.googleusercontent.com/DAIgh1_sI03ZJxlkzxMP-EuqcNppzVybwqjotxuBx8bYDzAWOmH-jKgK5-A0yxpg=s1200" width=100% height=350px>
+                     <div class="text">Karachi,Pakistan</div>
+                    </div>
+                    <div class="mySlides fade">
+                     <div class="numbertext">3 / 4</div>
+                      <img src="https://as2.ftcdn.net/v2/jpg/04/23/58/95/1000_F_423589599_EUuay6cTFMwHz6DD7PpmfMxpXuZKUetY.jpg"
+                      width=100% height=350px>
+                     <div class="text">Peshawar,Pakistan</div>
+                     </div>
+                     <div class="mySlides fade">
+                    <div class="numbertext">3 / 4</div>
+                    <img src="https://customercarecontacts.com/wp-content/uploads/2017/01/badshahi-mosque.jpg" 
+                    width=100% height=350px>
+                   <div class="text">Lahore,Pakistan</div>
+                  </div>
+                  <a class="prev" onclick="plusSlides(-1)">❮</a>
+                  <a class="next" onclick="plusSlides(1)">❯</a>
+              </div>
+              <br>
+
+              <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+               <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+               <span class="dot" onclick="currentSlide(4)"></span> 
+              
+              
+              </div>
+              <script>
+              let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+
+
+			
+		</section>
+		
+			<section class="footer">
+		
+
+			<div class="content">
+				<div class="left box">
+					<div class="upper">
+						<div class="topic">About us</div>
+						<p>Our purpose is to help
+					       users to find hostels</br>
+						   easily and save their time</br>
+						</p>
+
+					</div>
+					<div class="lower">
+						<div class="topic">Contact us</div>
+						<div class="phone">
+							<a href="#"><i class="fas fa-phone-volume"></i>+923456787651</a>
+					</div>
+					<div class="email">
+							<a href="#"><i class="fas fa-envelope"></i>maryamkhan.7920@gmail.com</a>
+					</div>
+				</div>
+				</div>
+				<div class="middle box">
+					<div class="topic">Our Services</div>
+               			<div><a href="#">Term of services</a></div>
+               			<div><a href="#">Privacy policy</a></div>
+               			<div><a href="#">Safety measures</a></div>
+               			<div><a href="#">Terms and conditions</a></div>
+               			<div><a href="#">Sustanibility</a></div>
+
+                 </div>
+                 <div class="right box">
+                 	<div class="topic">Subscribe us</div>
+                 	
+                 		<form action="#">
+                 		<input type="text" placeholder="Enter email address">
+                 	<input type="submit" name="" value="Send">
+                 	<div class="media-icons">
+                 		<a href="#"><i class="fab fa-facebook-f"></i></a>
+                 		<a href="#"><i class="fab fa-instagram"></i></a>
+                 		<a href="#"><i class="fab fa-twitter"></i></a>	
+                 	</div>
+                 	</form>	
+                 	</div>
+                 </div>
+               
+			
+			<div class="bottom">
+                 	<p>Copyright &#169, 2022<a href="#">Stay At Ease</a>all rights reserved</p>
+                 	
+                 </div>
+             
+		
+		</section>
+   
+		
+
+		
+
+	
+ 
+</body>
+</html>
