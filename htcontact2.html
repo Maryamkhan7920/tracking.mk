@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.logo{
+			width: 20%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.logo img{
+			width: 50%;
+			border: 3px solid white;
+			border-radius: 50px;
+
+		}
+		.navbar{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: sticky;
+			top: 0;
+			cursor: pointer;
+			z-index: 2;
+		}
+		.nav-list{
+            width: 50%;
+            /*background-color: black;*/
+            display: flex;
+            align-items: center;
+		}
+		.nav-list li{
+			list-style: none;
+			padding: 26px 30px; 
+
+		}
+		.nav-list li a{
+			text-decoration: none;
+			color: white;
+
+		}
+		.nav-list li a:hover{
+			color: #00DED1;
+
+		}
+		.rightNav{
+			
+			width: 50%;
+			text-align: right;
+			padding: 0 23px;
+
+		}
+		.btn-sm{
+			padding: 8px 20px;
+			
+			background: none;
+			color: white;
+			cursor: pointer;
+			border: none;
+			font-family: sans-serif;
+		}
+		.background{
+			background: rgba(0, 0, 0, 0.7) url('https://images.pexels.com/photos/3314325/pexels-photo-3314325.jpeg?auto=compress&cs=tinysrgb&w=600');
+			background-size: cover;
+			background-blend-mode: darken;
+		}
+		.firstSection{
+			height: 50vh;
+		}
+		.box-main{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			font-family: sans-serif;
+			/*height: 80%;*/
+		}
+		.firstHalf{
+
+			text-align: center;
+			margin-top: 120px;
+		}
+		.text-big{
+			font-size: 40px;
+		}
+		.text-small{
+			font-size: 45px;
+		}
+
+        /*Middle section*/
+       /* section{
+        	background: #c8e9e9;
+        	display: flex;
+        	align-items: center;
+        	justify-content: center;
+        	
+        }*/
+        .container{
+        	margin-top: 50px;
+        	height: 100%;
+        	width: 80%;
+        	border-radius: 60px;
+        	padding: 20px 60px 40px 4px;
+
+        }
+        .container .content{
+        	height: 100%;
+        	display: flex;
+        	align-items: center;
+        	justify-content: space-between;
+        }
+        .container .content .left-side{
+        	width: 25%;
+        	height: 100%;
+        	display: flex;
+        	flex-direction: column;
+        	align-items: center;
+        	justify-content: center;
+        	position: relative;
+        	margin-top: 15px;
+
+        }
+        .content .left-side::before{
+        	content: '';
+        	position: absolute;
+        	height: 70%;
+        	width: 2px;
+        	background: black;
+        	right: -15px;
+        	top: 50%;
+        	transform: translateY(-50%);
+        }
+
+        .content .left-side .details{
+        	margin: 14px;
+        	text-align: center;
+        }
+        .content .left-side .details i{
+        	font-size: 30px;
+        	color: #00DED1;
+        	margin-bottom: 10px;
+
+        }
+        .content .left-side .details .topic{
+        	font-size: 18px;
+        	font-weight: 500;
+
+        }
+        .content .left-side .details .text-one,
+        .content .left-side .details .text-two{
+        	font-size: 14px;
+        	color: #afafb6;
+
+        }
+
+
+        .container .content .right-side{
+        	width: 75%;
+        	margin-left: 75px; 
+        }
+        .content .right-side .topic-text{
+        	font-size: 23px;
+        	font-weight: 600;
+        	color: black;
+        }
+        .right-side .input-box{
+        	height: 50px;
+        	width: 100%;
+        	margin: 12px 0;
+        }
+         .right-side .input-box input,
+        .right-side .input-box textarea{
+         	height: 100%;
+         	width: 100%;
+         	border: none;
+         	font-size: 16px;
+         	background: #F0F1F8;
+         	border-radius: 6px;
+         	padding: 0 15px;
+         	resize: none;
+         }
+         .right-side .message-box{
+         	min-height: 110px;
+         	margin-top: 6px;
+         }
+          .right-side .button{
+          	display: inline-block;
+          	margin-top: 12px;
+          }
+        
+         .right-side .button input[type="button"]{
+         	color: #fff;
+         	font-size: 18px;
+         	background: black;
+         	outline: none;
+         	border: none;
+         	padding: 8px 16px;
+         	border-radius: 6px;
+         	cursor: pointer;
+         	transition: all 0.3s ease;
+         }
+         .button input[type="button"]:hover{
+         	background: #00DED1;
+
+         }
+         @media (max-width: 950px) {
+         	.container{
+         		width: 90%;
+         		padding: 30px 35px 40px 45px;
+         	}
+         }
+         @media (max-width: 820px) {
+         	.container{
+         		margin: 40px 0;
+         		height: 100%;
+         	}
+         	.container .content{
+         		flex-direction: column-reverse;
+         	}
+         	.container .content .left-side{
+         		width: 100%;
+         		flex-direction: row;
+         		margin-top: 40px;
+         		justify-content: center;
+         		flex-wrap: wrap;
+         	}
+         	.container .content .left-side::before{
+         		display: none;
+         	}
+         	.container .content .right-side{
+         		width: 100%;
+         		margin-left: 0;
+         	}
+
+         }
+
+
+
+		/* footer */
+		
+		.footer{
+			height: 267px;
+			width: 100%;
+			
+			bottom: 0;
+			left: 0;
+			background: #111;
+
+		}
+		.footer .content{
+			max-width: 1350px;
+		
+			margin: auto;
+			padding: 20px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+		}
+		.footer .content p,a{
+			color: #fff;
+		}
+		.footer .content .box{
+			width: 33%;
+		}
+		.footer .content .topic{
+			font-size: 22px;
+			font-weight: 600;
+			color: #fff;
+			margin-bottom: 16px;
+		}
+		.footer .content p{
+			text-align: justify;
+		}
+		.footer .content .lower .topic{
+			margin: 7px 0 5px 0;
+		}
+		.footer .content .lower i{
+			padding-right: 16px;
+		}
+		.footer .content .middle a{
+			line-height: 32px;
+			text-decoration: none;
+		}
+		.footer .content .right input[type="text"]{
+			height: 40px;
+			width: 95%;
+			outline: none; 
+			color: #d9d9d9;
+			background: #000;
+			border-radius: 5px;
+			padding-left: 10px;
+			font-size: 17px;
+			border: 2px solid #222222;
+		}
+		.footer .content .right input[type="submit"]{
+			height: 38px;
+			width: 98%;
+			font-size: 18px;
+			background: black;
+			outline: none;
+			border-radius: 5px;
+			color: #fff;
+			letter-spacing: 1px;
+			cursor: pointer;
+			margin-top: 5px;
+			border: 2px solid #00DED1;
+			transform: all 0.3s ease-in-out;
+
+		}
+		.content .right input[type="submit"]:hover{
+			background: #00DED1 ;
+			
+		}
+		.footer .content .media-icons a{
+			font-size: 16px;
+			height: 45px;
+			width: 45px;
+			
+			display: inline-block;
+			text-align: center;
+			line-height: 43px;
+			border: 2px solid #222222;
+			margin: 25px 5px 0 0;
+			border-radius: 5px;
+			transition: all 0.3s ease;
+
+		}
+		.content .media-icons a:hover{
+			border-color: #00DED1;
+
+		}
+		.footer .bottom{
+			width: 100;
+			text-align: right;
+			color: #d9d9d9;
+			padding: 0 142px 5px 0;
+			margin-left: 870px;
+		}
+		.footer .bottom a{
+			color: #00DED1;
+		}
+		.footer a{
+			transition: all 0.3s ease;
+		}
+		.footer a:hover{
+			color: #00DED1;
+		}
+
+
+
+
+
+
+
+	</style>
+</head>
+<body>
+	<nav class="navbar background">
+			<ul class="nav-list">
+				<div class="logo"><img src="https://dcassetcdn.com/design_img/320429/48855/48855_2748031_320429_thumbnail.jpg" alt="logo">
+				</div>
+			<li><a href="#home">Home</a></li>
+			<li><a href="#about">About</a></li>
+			<li><a href="#blog">Blog</a></li>
+			<li><a href="#contact">Contact</a></li>
+
+			</ul>
+			<div class="rightNav">
+				<button class="btn btn-sm">login</button>
+				<button class="btn btn-sm">Signup</button>
+			</div>
+			
+		</nav>
+		<section class="background firstSection">
+			<div class="box-main">
+				<div class="firstHalf">
+					<p class="text-big">Contact Us</p>
+					<p class="text-small">We'd love to hear from you</p>
+
+				</div>
+			</div>
+			
+		</section>
+
+       <!-- middle section-->
+
+		
+			<section class="container">
+				<div class="content">
+					<div class="left-side">
+						<div class="address details">
+							<i class="fas fa-map-marker-alt"></i>
+							<div class="topic">Address</div>
+							<div class="text-one">ABC</div>
+							<div class="text-two">XYZ</div>
+						</div>
+						<div class="phone details">
+							<i class="fas fa-phone"></i>
+							<div class="topic">Phone</div>
+							<div class="text-one">+9234598761</div>
+							<div class="text-two">+9234567861</div>
+						</div>
+						<div class="email details">
+							<i class="fas fa-envelope"></i>
+							<div class="topic">E-mail</div>
+							<div class="text-one">maryamkhan.7920@gmail.com</div>
+							<div class="text-two">amirkhan@gmail.com</div>
+						</div>
+					</div>
+					<div class="right-side">
+						<div class="topic-text">Send us a message</div>
+						<p>Your E-mail address will not be published</p>
+						<p>Required fields are marked</p>
+					
+					<form action="#">
+						<div class="input-box">
+							<input type="text" placeholder="Enter your name">
+						</div>
+						<div class="input-box">
+							<input type="text" placeholder="Enter your email">
+						</div>
+						<div class="input-box message-box">
+							<textarea></textarea>
+						</div>
+						<div class="button">
+							<input type="button" value="Send now">
+						</div>
+					</form>
+				</div>
+				</div>
+			
+	</section>
+	<!--footer-->
+	<section class="footer">
+		
+
+			<div class="content">
+				<div class="left box">
+					<div class="upper">
+						<div class="topic">About us</div>
+						<p>Our purpose is to help
+					       users to find hostels</br>
+						   easily and save their time</br>
+						</p>
+
+					</div>
+					<div class="lower">
+						<div class="topic">Contact us</div>
+						<div class="phone">
+							<a href="#"><i class="fas fa-phone-volume"></i>+923456787651</a>
+					</div>
+					<div class="email">
+							<a href="#"><i class="fas fa-envelope"></i>maryamkhan.7920@gmail.com</a>
+					</div>
+				</div>
+				</div>
+				<div class="middle box">
+					<div class="topic">Our Services</div>
+               			<div><a href="#">Term of services</a></div>
+               			<div><a href="#">Privacy policy</a></div>
+               			<div><a href="#">Safety measures</a></div>
+               			<div><a href="#">Terms and conditions</a></div>
+               			<div><a href="#">Sustanibility</a></div>
+
+                 </div>
+                 <div class="right box">
+                 	<div class="topic">Subscribe us</div>
+                 	
+                 		<form action="#">
+                 		<input type="text" placeholder="Enter email address">
+                 	<input type="submit" name="" value="Send">
+                 	<div class="media-icons">
+                 		<a href="#"><i class="fab fa-facebook-f"></i></a>
+                 		<a href="#"><i class="fab fa-instagram"></i></a>
+                 		<a href="#"><i class="fab fa-twitter"></i></a>	
+                 	</div>
+                 	</form>	
+                 	</div>
+                 </div>
+               
+			
+			<div class="bottom">
+                 	<p>Copyright &#169, 2022<a href="#">Stay At Ease</a>all rights reserved</p>
+                 	
+                 </div>
+             
+		
+	</section>
+ 
+</body>
+</html>
